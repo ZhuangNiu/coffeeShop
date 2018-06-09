@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: edu.mum.coffee.OrderServiceTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.209 sec <<< FAILURE! - in edu.mum.coffee.OrderServiceTest
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 1.37 sec <<< FAILURE! - in edu.mum.coffee.OrderServiceTest
 testFindByPerson(edu.mum.coffee.OrderServiceTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
@@ -542,7 +542,7 @@ Caused by: java.lang.ClassNotFoundException: javax.xml.bind.JAXBException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 
-testSave(edu.mum.coffee.OrderServiceTest)  Time elapsed: 0 sec  <<< ERROR!
+testSave(edu.mum.coffee.OrderServiceTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
@@ -722,7 +722,7 @@ Caused by: java.lang.ClassNotFoundException: javax.xml.bind.JAXBException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 
-testFindByDate(edu.mum.coffee.OrderServiceTest)  Time elapsed: 0 sec  <<< ERROR!
+testFindByDate(edu.mum.coffee.OrderServiceTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
@@ -902,7 +902,7 @@ Caused by: java.lang.ClassNotFoundException: javax.xml.bind.JAXBException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 
-testFindById(edu.mum.coffee.OrderServiceTest)  Time elapsed: 0 sec  <<< ERROR!
+testFindById(edu.mum.coffee.OrderServiceTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)

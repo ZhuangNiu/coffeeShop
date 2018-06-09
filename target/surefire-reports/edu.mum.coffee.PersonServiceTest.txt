@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: edu.mum.coffee.PersonServiceTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.015 sec <<< FAILURE! - in edu.mum.coffee.PersonServiceTest
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.326 sec <<< FAILURE! - in edu.mum.coffee.PersonServiceTest
 testFindById(edu.mum.coffee.PersonServiceTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)

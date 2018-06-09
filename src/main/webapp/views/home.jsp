@@ -8,15 +8,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>LogIn</title>
 </head>
 <body>
-	You can choose any presentation framework that could be integrated with
+	<%-- You can choose any presentation framework that could be integrated with
 	Spring
 	<p>
 	<p>
 		The only user is "<b>super</b>" and the password is "<b>pw</b>"
 	<p>
-		<a href="<c:url value="/secure" />"> Go to Secure Area </a>
+		<a href="<c:url value="/secure" />"> Go to Secure Area </a> --%>
+		
+	<form action="" method="POST">
+		<div>
+	        <label>Email address</label>
+	        <input type="text" name="email"/>
+	    </div>
+	    <div>
+	        <label>Enter Password</label>
+	        <input type="password" name="pwd">
+	    </div>
+	    <div>
+       		<button type="submit">Submit</button>
+        </div>
+       
+   </form>
 </body>
 </html>
