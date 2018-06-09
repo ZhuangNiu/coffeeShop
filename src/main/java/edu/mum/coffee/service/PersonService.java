@@ -25,11 +25,15 @@ public class PersonService {
 	}
 
 	public Person findById(Long id) {
-		return personRepository.findOne(id);
+		return personRepository.getOne(id);
 	}
 
 	public void removePerson(Person person) {
 		personRepository.delete(person);
 	}
+	public List<Person> getAll(){
+		return personRepository.findAll();
+	}
+
 
 }

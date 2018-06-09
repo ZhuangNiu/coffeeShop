@@ -21,8 +21,12 @@ public class Person {
 	private Address address;
 	private String phone;
 	private boolean enable;
+	private String password;
+    private String role;
+    private boolean isAdmin;
 
-	public long getId() {
+
+    public long getId() {
 		return id;
 	}
 
@@ -74,4 +78,20 @@ public class Person {
 		this.phone = phone;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) { isAdmin = admin; }
+
+    public String getRole() {return role;  }
+
+    public void setRole(String role) {this.role = role;}
 }

@@ -1,25 +1,24 @@
 package edu.mum.coffee.controller;
 
+import edu.mum.coffee.domain.Person;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomeController {
-	
+
 	@GetMapping({"/", "/index", "/home"})
-	public String homePage() {
+	public String homePage(Model model) {
+
+		model.addAttribute("person", new Person());
 		return "home";
-	}
-	
-	@RequestMapping(value="/registration", method=RequestMethod.GET)
-	public String registrationPage() {
-		return "registration";
 	}
 
 	@GetMapping({"/secure"})
 	public String securePage() {
 		return "secure";
 	}
+
+
 }
