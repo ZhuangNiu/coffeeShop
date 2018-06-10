@@ -1,7 +1,7 @@
 package edu.mum.coffee.config;
 
-import edu.mum.coffee.Security.AuthenticationFilter;
-import edu.mum.coffee.Security.TokenAuthenticationProvider;
+import edu.mum.coffee.security.AuthenticationFilter;
+import edu.mum.coffee.security.TokenAuthenticationProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.headers().disable().
                 authorizeRequests().antMatchers("/", "/index", "/authenticate", "/home",
-                "/user").permitAll().
+                "/user", "/api/product").permitAll().
                 anyRequest().authenticated().and().
                 csrf().disable().
                 sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).
@@ -46,6 +46,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public AuthenticationEntryPoint unauthorizedEntryPoint() {
-        return (request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+        return (request, response, authException) -> {
+            response.sendRedirect("/home?response=Token Expired or Authorization not granted");
+        };
     }
 }

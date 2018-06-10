@@ -29,30 +29,26 @@
             </div>
             <div class="form-group">
                 <label>Name</label>
-                <form:textarea path="productName" cssClass="form-control" disabled="true" id="pname"/>
+                <form:textarea path="productName" cssClass="form-control" disabled="true"/>
                 <input type="hidden" value="${product.productName}" name="productName"/>
-                <span id="pNameError"></span>
             </div>
 
             <div class="form-group">
                 <label>Price</label>
-                <form:textarea path="price" cssClass="form-control" disabled="true" id="pprice"/>
-                <input type="hidden" value="${product.price}" name="price" />
-                <span id="priceError"></span>
+                <form:textarea path="price" cssClass="form-control" disabled="true"/>
+                <input type="hidden" value="${product.price}" name="price"/>
             </div>
 
             <div class="form-group">
                 <label>Description</label>
-                <form:textarea path="description" cssClass="form-control" disabled="true" id="pdescript"/>
-                <input type="hidden" value="${product.description}" name="description" maxlength="200"/>
+                <form:textarea path="description" cssClass="form-control" disabled="true"/>
+                <input type="hidden" value="${product.description}" name="description"/>
             </div>
 
             <div class="form-group">
                 <label>Quantity</label>
                 <input type="text" value="" name="quantity" class="form-control"
-                       placeholder="Please enter you quantity here" id="pqty"/>
-                <span id="qtyError"></span>
-
+                       placeholder="Please enter you quantity here"/>
             </div>
             <input type="hidden" value="${token}" name="X-Auth-Token"/>
 
@@ -60,6 +56,5 @@
         </form:form>
     </div>
 </div>
-
 </body>
 </html>

@@ -1,4 +1,5 @@
 package edu.mum.coffee.domain;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

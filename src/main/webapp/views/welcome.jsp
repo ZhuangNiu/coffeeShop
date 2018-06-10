@@ -34,23 +34,21 @@
                 Your cart is empty
             </c:if>
             <c:if test="${fn:length(order.orderLines) > 0}">
-            <div class="container button-wrapper">
-            </div>
             <div class="row align-items-center justify-content-center">
                 <a href="/viewCart?X-Auth-Token=${token}" class="btn btn-info btn-lg">
                     <span class="glyphicon glyphicon-shopping-cart">
                     </span>
-                        ${order.orderLines.size()} Item(s)</a>
-                </c:if>
-            </div>
-        </h3>
-        <div class="row align-items-center justify-content-center">
-            <a class="btn btn-primary" href="/userProfile/${product.id}?X-Auth-Token=${token}" role="button">Edit Profile</a>
-        </div>
-    </div>
+                  ${order.orderLines.size()} Item(s)</a>
+            </c:if>
 
+        </h3>
+    </div>
+    <div class="row align-items-center justify-content-center">
+        <a class="btn btn-primary" href="/userProfile/${product.id}?X-Auth-Token=${token}" role="button">Edit Profile</a>
+    </div>
 </div>
-</div>
+
+
 
 <div class="container">
     <h2>Product In Store</h2>
@@ -79,88 +77,88 @@
 </div>
 
 <security:authorize access="hasAnyRole('ROLE_ADMIN')">
-    <div class="container">
-        <h3>Admin DashBoard</h3>
+<div class="container">
+    <h3>Admin DashBoard</h3>
 
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="active"><a href="#hometab" role="tab" data-toggle="tab">Product</a></li>
-            <li><a href="#javatab" role="tab" data-toggle="tab">View/Create Customer</a></li>
-            <li><a href="#csharptab" role="tab" data-toggle="tab">View Orders</a></li>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#hometab" role="tab" data-toggle="tab">Product</a></li>
+        <li><a href="#javatab" role="tab" data-toggle="tab">View/Create Customer</a></li>
+        <li><a href="#csharptab" role="tab" data-toggle="tab">View Orders</a></li>
 
-        </ul>
-        </li>
+    </ul>
+    </li>
 
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div class="tab-pane active" id="hometab">
-                <h2>Product In Store</h2>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="hometab">
+            <h2>Product In Store</h2>
 
-                <table class="table table-striped">
-                    <thead>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Product Type</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="product" items="${products}">
                     <tr>
-                        <th>Product Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Product Type</th>
+                        <td>${product.productName}</td>
+                        <td>${product.description}</td>
+                        <td>${product.price}</td>
+                        <td>${product.productType}</td>
+                        <td><a href="productEdit/${product.id}?X-Auth-Token=${token}">Edit</a></td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach var="product" items="${products}">
-                        <tr>
-                            <td>${product.productName}</td>
-                            <td>${product.description}</td>
-                            <td>${product.price}</td>
-                            <td>${product.productType}</td>
-                            <td><a href="productEdit/${product.id}?X-Auth-Token=${token}">Edit</a></td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-                <a class="btn btn-primary" href="/product?X-Auth-Token=${token}" role="button">Create New Product</a>
+                </c:forEach>
+                </tbody>
+            </table>
+            <a class="btn btn-primary" href="/product?X-Auth-Token=${token}" role="button">Create New Product</a>
 
-            </div>
-            <div class="tab-pane" id="javatab">
+        </div>
+        <div class="tab-pane" id="javatab">
 
-                <table class="table table-striped">
-                    <thead>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Phone</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="user" items="${users}">
                     <tr>
-                        <th>Email</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Phone</th>
+                        <td>${user.email}</td>
+                        <td>${user.lastName}</td>
+                        <td>${user.firstName}</td>
+                        <td>${user.phone}</td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach var="user" items="${users}">
-                        <tr>
-                            <td>${user.email}</td>
-                            <td>${user.lastName}</td>
-                            <td>${user.firstName}</td>
-                            <td>${user.phone}</td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-                <a class="btn btn-primary" href="/user" role="button">Create New User</a>
-            </div>
-            <div class="tab-pane" id="csharptab">
-                <table class="table table-striped">
-                    <thead>
+                </c:forEach>
+                </tbody>
+            </table>
+            <a class="btn btn-primary" href="/user" role="button">Create New User</a>
+        </div>
+        <div class="tab-pane" id="csharptab">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Order Date</th>
+                    <th>Username</th>
+                    <th>No of Order Lines</th>
+                    <th>View All Orders</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="order" items="${orders}">
                     <tr>
-                        <th>Order Date</th>
-                        <th>Username</th>
-                        <th>No of Order Lines</th>
-                        <th>View All Orders</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach var="order" items="${orders}">
-                        <tr>
-                            <td>${order.orderDate}</td>
-                            <td>${order.person.email}</td>
-                            <td>${order.orderLines.size()}</td>
-                            <td>
+                        <td>${order.orderDate}</td>
+                        <td>${order.person.email}</td>
+                        <td>${order.orderLines.size()}</td>
+                        <td>
 
 
                                 <!-- Trigger the modal with a button -->
@@ -208,18 +206,18 @@
                                             </div>
 
 
-                                        </div>
                                     </div>
-
                                 </div>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </div>
+
+                            </div>
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 </security:authorize>
 </body>
 </html>

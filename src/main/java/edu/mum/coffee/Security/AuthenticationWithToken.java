@@ -1,4 +1,4 @@
-package edu.mum.coffee.Security;
+package edu.mum.coffee.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken;

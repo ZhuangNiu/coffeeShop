@@ -13,7 +13,7 @@ import edu.mum.coffee.domain.Person;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-    @Query("SELECT person FROM Person person  WHERE person.email=(:email)")
-    public List<Person> findByEmail(@Param("email") String email);
-
+	@Query("SELECT person FROM Person person  WHERE person.email=(:email)")
+	public List<Person> findByEmail(@Param("email")String email);
+	
 }

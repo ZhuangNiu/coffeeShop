@@ -1,7 +1,8 @@
-package edu.mum.coffee.Security;
+package edu.mum.coffee.security;
 
 import com.google.common.base.Optional;
 import edu.mum.coffee.service.EhTokenService;
+import edu.mum.coffee.util.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -21,10 +22,10 @@ public class TokenAuthenticationProvider implements AuthenticationProvider {
         if (!token.isPresent() || token.get().isEmpty()) {
             throw new BadCredentialsException("Invalid token");
         }
-        if (!tokenService.contains(token.get())) {
+        if (!tokenService.contains(token.get(), Utility.TOKEN_CACHE)) {
             throw new BadCredentialsException("Invalid token or token expired");
         }
-        return (Authentication) tokenService.retrieve(token.get());
+        return (Authentication) tokenService.retrieve(token.get(), Utility.TOKEN_CACHE);
     }
 
     @Override
@@ -32,3 +33,4 @@ public class TokenAuthenticationProvider implements AuthenticationProvider {
         return authentication.equals(PreAuthenticatedAuthenticationToken.class);
     }
 }
+

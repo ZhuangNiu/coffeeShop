@@ -1,8 +1,8 @@
 package edu.mum.coffee.domain;
 
-public class Rensponse {
+public class Response {
 
-    public Rensponse(String code, String msg){
+    public Response(String code, String msg){
         this.code = code;
         this.msg = msg;
     }

@@ -1,8 +1,8 @@
-package edu.mum.coffee.Security;
+package edu.mum.coffee.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Optional;
-import edu.mum.coffee.domain.Rensponse;
+import edu.mum.coffee.domain.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -56,7 +56,7 @@ public class AuthenticationFilter extends GenericFilterBean {
             chain.doFilter(request, response);
         } catch (AuthenticationException authenticationException) {
             SecurityContextHolder.clearContext();
-            Rensponse rsp = new Rensponse("1008", authenticationException.getMessage());
+            Response rsp = new Response("1008", authenticationException.getMessage());
             String tokenJsonResponse = new ObjectMapper().writeValueAsString(rsp);
             httpResponse.addHeader("Content-Type", "application/json");
             httpResponse.getWriter().print(tokenJsonResponse);
@@ -91,3 +91,4 @@ public class AuthenticationFilter extends GenericFilterBean {
         return responseAuthentication;
     }
 }
+

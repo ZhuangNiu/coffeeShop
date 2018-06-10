@@ -16,6 +16,7 @@ public class PersonService {
 	@Autowired
 	private PersonRepository personRepository;
 
+
 	public Person savePerson(Person person) {
 		return personRepository.save(person);
 	}
@@ -31,9 +32,9 @@ public class PersonService {
 	public void removePerson(Person person) {
 		personRepository.delete(person);
 	}
+
 	public List<Person> getAll(){
 		return personRepository.findAll();
 	}
-
 
 }

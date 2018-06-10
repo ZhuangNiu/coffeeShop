@@ -16,7 +16,6 @@
     <style>
         span {
             color: red; font-weight: bold;
-
         }
     </style>
 
@@ -102,12 +101,10 @@
         var state = document.getElementById("state").value;
         var country = document.getElementById("country").value;
         var ZipCode = document.getElementById("zipCode").value;
-
         if(password=='' ){
             document.getElementById("passwordError").innerHTML = "Password Required!";
             error = false;
         }
-
         if(email==''){
             document.getElementById("emailError").innerHTML = "Email is Required!";
             error = false;
@@ -120,7 +117,6 @@
             document.getElementById("lNameError").innerHTML = "Last Name  is Required!";
             error = false;
         }
-
         if( Phone==''){
             document.getElementById("phoneError").innerHTML = "Phone Required!";
             error = false;
@@ -141,47 +137,35 @@
             document.getElementById("zipCodeError").innerHTML = "Zip Code  is Required!";
             error = false;
         }
-
         if (validateEmail(email)) {
-
         } else {
             document.getElementById("emailError").innerHTML = "Email is not valid: Format: abc@example.com";
             error = false;
         }
-
         if (validatePhone(Phone)) {
-
         } else {
             document.getElementById("phoneError").innerHTML = "Phone is not valid: Format: +XX-XXXX-XXXX";
             error = false;
         }
-
         if (validateZip(ZipCode)) {
-
         } else {
             document.getElementById("zipCodeError").innerHTML = "ZipCode is not valid: Format: XXXXX";
             error = false;
         }
         return error;
     }
-
-
     function validateEmail(email) {
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
-
     function validatePhone(phone) {
         var re = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
         return re.test(phone);
     }
-
     function validateZip(zipCode) {
         var re = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
         return re.test(zipCode);
     }
-
-
 </script>
 </body>
 </html>

@@ -1,5 +1,4 @@
 package edu.mum.coffee.domain;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,8 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -18,8 +15,6 @@ public class Person {
 	@GeneratedValue
 	private long id;
 	private String firstName;
-
-
 	private String lastName;
 	private String email;
 	@OneToOne(cascade = CascadeType.ALL)
