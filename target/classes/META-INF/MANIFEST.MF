@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Built-By: NiuMac
 Build-Jdk: 9.0.4
 Implementation-Title: coffeeShop
-Implementation-Version: 1.5.3.RELEASE
+Implementation-Version: 2.0.2.RELEASE
 Implementation-Vendor-Id: edu.mum
-Implementation-Vendor: Pivotal Software, Inc.
-Implementation-URL: http://projects.spring.io/spring-boot/coffeeShop/
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/coffeeShop
 Created-By: Maven Integration for Eclipse
 

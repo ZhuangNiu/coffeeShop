@@ -17,8 +17,9 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import javax.servlet.http.HttpServletResponse;
 
 @Configuration
+@EnableWebMvcSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.headers().disable().
